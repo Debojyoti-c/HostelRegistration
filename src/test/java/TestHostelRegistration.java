@@ -6,7 +6,7 @@ import dtos.RegistrationDTO;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestLogic {
+public class TestHostelRegistration {
 
     DataStore dataStore;
     RegistrationController registrationController;
@@ -28,6 +28,7 @@ public class TestLogic {
         registrationController.registerStudent(registrationDTO2);
         registrationController.registerStudent(registrationDTO3);
         assertEquals(2, dataStore.getHostelMap().get("BV").getStudentList().size());
+        assertEquals(1, dataStore.getHostelMap().get("AV").getStudentList().size());
     }
 
     @Test
